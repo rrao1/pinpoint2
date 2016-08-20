@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".activities.EditActivity">
+
+    <android.support.v7.widget.CardView  xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="150dp"
+    android:layout_height="148dp"
+    android:layout_marginTop="10dp"
+    card_view:cardBackgroundColor="#E6E6E6"
+    card_view:cardCornerRadius="5dp"
+    android:weightSum="1"
+    android:id="@+id/cardView">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/ivThumbnail"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    </android.support.v7.widget.CardView>
+
+    <EditText
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/etName"
+    android:hint="Name"
+    android:layout_toRightOf="@+id/cardView"
+    android:layout_marginLeft="10dp"
+    android:layout_centerHorizontal="true"
+    android:drawableLeft="@drawable/ic_name"
+    android:background="@drawable/edittext_lines_top"
+    android:paddingLeft="10dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp"
+    android:layout_alignTop="@+id/cardView"
+    android:layout_marginBottom="-1dp"
+    android:maxLines="1"
+    android:textSize="15sp"/>
+
+    <EditText
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/etLocation"
+    android:layout_below="@+id/etName"
+    android:layout_toRightOf="@+id/cardView"
+    android:layout_alignLeft="@+id/etName"
+    android:layout_centerHorizontal="true"
+    android:drawableLeft="@drawable/ic_location_2"
+    android:hint="Location"
+    android:background="@drawable/edittext_lines"
+    android:paddingLeft="10dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp"
+    android:layout_marginBottom="-1dp"
+    android:maxLines="1"
+    android:textSize="15sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/etDate"
+        android:layout_below="@+id/etLocation"
+        android:layout_toRightOf="@+id/ivThumbnail"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/ic_date"
+        android:hint="Date"
+        android:background="@drawable/edittext_lines_bottom"
+        android:paddingLeft="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:layout_marginBottom="-1dp"
+        android:maxLines="1"
+        android:textSize="15sp"
+        android:onClick="Datepicker"/>
+
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tvCategories"
+    android:layout_below="@id/cardView"
+    android:layout_marginTop="25dp"
+    android:textColor="#666666"
+    android:textSize="17sp"
+    android:text="CATEGORIES"
+    android:textStyle="bold"/>
+
+    <View android:id="@+id/separator"
+    android:background="#B3B6B6B6"
+    android:layout_marginTop="5dp"
+    android:layout_width = "fill_parent"
+    android:layout_height="2dp"
+    android:layout_below="@+id/tvCategories"
+    android:layout_alignEnd="@+id/etDate" />
+
+
+    <EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/etCategories"
+    android:layout_below="@+id/tvCategories"
+    android:layout_marginTop="20dp"
+    android:layout_centerHorizontal="true"
+    android:hint="Add categories"
+    android:background="@drawable/edittext_lines_alone"
+    android:padding="10dp"
+    android:maxLines="3"
+    android:textSize="15sp"/>
+
+    <View android:id="@+id/separator1"
+    android:background="#80B6B6B6"
+    android:layout_marginBottom="75dp"
+    android:layout_width = "fill_parent"
+    android:layout_height="1dp"
+    android:layout_above="@+id/separator2"
+    android:layout_alignEnd="@+id/etDate" />
+
+    <android.support.v17.leanback.widget.HorizontalGridView
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:id="@+id/gridView"
+    android:layout_below="@id/etCategories"
+    android:layout_marginTop="55dp"
+    android:layout_alignParentStart="true" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Recent Categories:"
+    android:id="@+id/tvUsedCats"
+    android:layout_below="@+id/etCategories"
+    android:layout_marginTop="25dp"
+    android:layout_alignParentStart="true" />
+
+    <View android:id="@+id/separator2"
+    android:background="#80B6B6B6"
+    android:layout_marginTop="13dp"
+    android:layout_width = "fill_parent"
+    android:layout_height="1dp"
+    android:layout_below="@+id/gridView"
+    android:layout_alignEnd="@+id/etDate" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Suggested Categories:"
+    android:id="@+id/tvSugTitle"
+    android:layout_below="@+id/gridView"
+    android:layout_marginTop="25dp"
+    android:layout_alignParentStart="true" />
+
+    <android.support.v17.leanback.widget.HorizontalGridView
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:id="@+id/gvSuggested"
+    android:layout_below="@+id/tvSugTitle"
+    android:layout_marginTop="10dp"
+    android:layout_alignParentStart="true" />
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Get Suggested Categories"
+    android:id="@+id/btnAutoTag"
+    android:layout_below="@+id/gridView"
+    android:layout_marginTop="40dp"
+    android:layout_centerHorizontal="true"
+    android:onClick="autoTag"/>
+
+    <View android:id="@+id/separator3"
+    android:background="#80B6B6B6"
+    android:layout_marginTop="90dp"
+    android:layout_width = "fill_parent"
+    android:layout_height="1dp"
+    android:layout_below="@+id/separator2"
+    android:layout_alignEnd="@+id/etDate" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="No recent categories"
+    android:id="@+id/tvNoCats"
+    android:layout_marginTop="45dp"
+    android:layout_below="@+id/etCategories"
+    android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</ScrollView>

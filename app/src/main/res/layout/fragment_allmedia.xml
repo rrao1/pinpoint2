@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!-- This is the fragment  to be displayed for a section associated with a tab -->
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
+        android:id="@+id/mediaGrid"
+        android:numColumns="2"
+        android:horizontalSpacing="5dp"
+        android:gravity="center|center_horizontal"
+        android:verticalSpacing="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"
+            android:foregroundGravity="center_vertical|center_horizontal" />
+
+    <ImageView
+        android:layout_width="355dp"
+        android:layout_height="470dp"
+        android:id="@+id/ivNoMedia"
+        android:layout_gravity="center_horizontal|top"
+        android:src="@drawable/nomediafound"/>
+
+</FrameLayout>

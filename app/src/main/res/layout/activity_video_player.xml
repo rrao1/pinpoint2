@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/video_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:gravity="center_horizontal|center_vertical"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/my_toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:elevation="4dp"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout"
+        android:background="@android:color/black"
+        android:layout_centerInParent="true">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            >
+
+            <FrameLayout
+                android:id="@+id/videoSurfaceContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/black"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true">
+                <SurfaceView
+                    android:id="@+id/videoSurface"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/frameLandPort"
+                android:layout_width="fill_parent"
+                android:layout_below="@id/videoSurfaceContainer"
+                android:layout_height="match_parent"></FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/rlCurrTags"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+                <android.support.v17.leanback.widget.HorizontalGridView
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:id="@+id/gvCurrTags"
+                    android:layout_marginBottom="25dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:textColor="#FFFFFF"
+                    android:text="No current tags"
+                    android:id="@+id/tvNoTags"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

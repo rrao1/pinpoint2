@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VidTagger</string>
+    <string name="description">description</string>
+    <string name="facebook_app_id">231899830541999</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
